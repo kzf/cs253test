@@ -14,9 +14,17 @@ except IOError:
 
 import webapp2
 
-class Welcome(webapp2.RequestHandler):
+class HelloWebapp2(webapp2.RequestHandler):
     def get(self):
-        self.response.out.write("Hello world!");
+        self.response.write('Hello, webapp2!')
 
-app = webapp2.WSGIApplication([('/unit2/welcome', Welcome)],
-                              debug=True)
+app = webapp2.WSGIApplication([
+    ('/', HelloWebapp2),
+], debug=True)
+
+def main():
+    from paste import httpserver
+    httpserver.serve(app, host='127.0.0.1', port='8080')
+
+if __name__ == '__main__':
+    main()

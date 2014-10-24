@@ -14,9 +14,9 @@ except IOError:
 
 import webapp2
 
-class Welcome(BaseHandler):
+class Welcome(webapp2.RequestHandler):
     def get(self):
-        self.render('index.html');
+        self.response.out.write("Hello world!");
 
 app = webapp2.WSGIApplication([('/unit2/welcome', Welcome)],
                               debug=True)

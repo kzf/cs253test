@@ -47,10 +47,10 @@ class Unit2Rot13(BaseHandler):
         self.render('unit2rot13.html')
     def post(self):
         rotated = ''
-        content = self.request.get('content')
+        content = self.request.get('text')
         if content:
             rotated = content.encode('rot13')
-        self.render('unit2rot13.html', content = rotated)
+        self.render('unit2rot13.html', text = rotated)
 
 class Unit2Welcome(BaseHandler):
     def get(self):

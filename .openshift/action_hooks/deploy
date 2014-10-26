@@ -1,4 +1,0 @@
-#!/bin/bash
-
-echo "SYMLINKING dbconnect file"
-ln -s $OPENSHIFT_DATA_DIR/dbconnect.py $OPENSHIFT_REPO_DIR/dbconnect.py

@@ -1,0 +1,72 @@
+<!doctype html>
+<html>
+    <head>
+        <title>My Blog</title>
+        <style type="text/css">
+            body {
+                padding: 0px;
+                margin: 0 auto;
+            }
+            h1 {
+                margin: auto;
+                width: 300px;
+            }
+            .post {
+                margin-top: 30px;
+            }
+            .posts {
+                margin: auto;
+                width: 600px;
+            }
+            .post {
+                padding: 1em;
+                border: 1px solid blue;
+                border-radius: 0.4em;
+                position: relative;
+            }
+            h2 {
+                margin: 0 auto;
+            }
+            .date {
+                font-size: 0.7em;
+                float: right;
+                top: 1em;
+                right: 1em;
+                position: absolute;
+            }
+            a {
+                margin: 0 auto;
+                margin-top: 30px;
+                width: 6em;
+                height: 2em;
+                line-height: 2em;
+                text-align: center;
+                display:block;
+                border-radius: 0.4em;
+                background-color: blue; 
+                color: white;
+                transition: 0.2s;
+                border: 2px solid white;
+            }
+            a:hover {
+                background: white;
+                border: 2px solid blue;
+                color: blue;
+            }
+        </style>
+    </head>
+	<body>
+        <h1>My Blog</h1>
+		<div class="posts">
+			{% for post in posts %}
+				<div class="post">
+                    <h2>{{post[1]}}</h2>
+                    <span class="date">{{post[3]}}</span>
+                    <div class="content">{{post[2]}}</div>
+				</div>
+			{% endfor %}
+            <a href="blog/newpost">New Post</a>
+		</div>
+        
+	</body>
+</html>

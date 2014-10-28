@@ -7,10 +7,16 @@ class Unit3ViewBlog(BaseHandler):
         cur.execute("SELECT * FROM BLOG_POSTS ORDER BY TIMESTAMP DESC")
         self.render('unit3viewblog.html', posts=cur.fetchall())
 
+class Unit3ViewPost(BaseHandler):
+    def get(self, postid):
+        cur.execute("SELECT * FROM BLOG_POSTS WHERE ID=%s ORDER BY TIMESTAMP DESC"
+                        , (postid))
+        self.render('unit3viewblog.html', posts=cur.fetchall())
+
 class Unit3NewBlogPost(BaseHandler):
     def saveNewPost(self, subject, content):
         cur.execute("INSERT INTO blog_posts (SUBJECT, CONTENT) VALUES ('%s', '%s')"
-                        %(subject, content))
+                        ,(subject, content))
         db.commit()
         
     def get(self):

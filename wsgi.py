@@ -34,6 +34,7 @@ application = webapp2.WSGIApplication([
     ('/unit2/welcome', Unit2Welcome),
     ('/unit2/fizzbuzz', Unit2FizzBuzz),
     ('/unit3/blog', Unit3ViewBlog),
+    ('/unit3/blog/(\d+)', Unit3ViewPost),
     ('/unit3/blog/newpost', Unit3NewBlogPost)
 ], debug=True)
 

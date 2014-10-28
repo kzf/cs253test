@@ -34,7 +34,7 @@
                 right: 1em;
                 position: absolute;
             }
-            a {
+            .newpost {
                 margin: 0 auto;
                 margin-top: 30px;
                 width: 6em;
@@ -48,7 +48,7 @@
                 transition: 0.2s;
                 border: 2px solid white;
             }
-            a:hover {
+            .newpost:hover {
                 background: white;
                 border: 2px solid blue;
                 color: blue;
@@ -60,12 +60,12 @@
 		<div class="posts">
 			{% for post in posts %}
 				<div class="post">
-                    <h2>{{post[1]}}</h2>
-                    <span class="date">{{post[3]}}</span>
+                    <a href="/unit3/blog/{{post[0]}}"><h2>{{post[1]}}</h2></a>
+                    <span class="date">{{post[3].strftime("%A %B %d, %Y")}}</span>
                     <div class="content">{{post[2]}}</div>
 				</div>
 			{% endfor %}
-            <a href="blog/newpost">New Post</a>
+            <a class="newpost" href="blog/newpost">New Post</a>
 		</div>
         
 	</body>
